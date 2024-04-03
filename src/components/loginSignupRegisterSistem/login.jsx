@@ -130,7 +130,7 @@ export default function LoginEmailPasswordForm(){
 
             const signUser = await signInWithEmailAndPassword(auth, values.email, values.password);
             const isVerificated = signUser.user.emailVerified;
-
+            console.log(signUser)
             if(isVerificated) {
 
                 setLoginComplete(true);
@@ -174,6 +174,7 @@ export default function LoginEmailPasswordForm(){
             setErrorMesagge("")
 
         } catch (error) {
+            console.log(error.code)
             setTimeout(() => {
                 setButtonLoading(false);
                 if(error.message === "email-empty"){
@@ -181,6 +182,10 @@ export default function LoginEmailPasswordForm(){
                 }
                 if(error.code === "auth/internal-error") {
                     setErrorMesagge("Internal error, try again later.");
+                }
+                if(error.code === "auth/invalid-credential"){
+                    console.log("a")
+                    setErrorMesagge("Invalid credentials.");
                 }
                 if(error.code === "auth/user-not-found"){
                     setErrorMesagge("This user does not exist.");
@@ -310,7 +315,7 @@ export default function LoginEmailPasswordForm(){
                         <span className={stylesText.text070rem}>Email</span>
                         <input className={uiStyles.inputText} onChange={changeDetector} value={values.email.toLowerCase()} name="email" type="text" autoComplete="off"  placeholder="Enter your email address..." />
                         <span className={stylesText.text070rem}>Password</span>
-                        <input className={uiStyles.inputText} onChange={changeDetector} autocomplete="current-password" id="current-password"  value={values.password.toLowerCase()} name="password" type="password" autoComplete="off" placeholder="Enter your password..." />
+                        <input className={uiStyles.inputText} onChange={changeDetector} autoComplete="current-password" id="current-password"  value={values.password.toLowerCase()} name="password" type="password" placeholder="Enter your password..." />
                         <p className={stylesText.textError}>{errorMessage}</p>
                         <button tabIndex={"0"} className={`${!buttonLoading? uiStyles.buttonSubmit1 : uiStyles.buttonSubmit1_loading}`} type="submit" >
                             <span></span>
