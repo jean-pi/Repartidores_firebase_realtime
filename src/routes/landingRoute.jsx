@@ -10,9 +10,29 @@ export default function LandingView(){
 
 return (
 
-        <div className={styleslandingRoute.landingRouteContainer}>
+    <div className={styleslandingRoute.landingRouteContainer}>
 
-        
+        <div  className={styleslandingRoute.containerDescriptionProyect}>
+            <p tabIndex={"0"}  className={styleslandingRoute.descriptionProyect}>
+                Build a list containing time slots, in 30-min intervals.
+                Let it start at 9 am and end at 5 pm. The company
+                has availability of 8 motorcyclists every 30 min. when someone does
+                clicking on one of these little boxes should take a biker resource.
+                In other words, a counter that starts at 3 and then goes down to 2, in addition to marking the
+                box in red If the same user clicks on the same box, he must release
+                the resource if it was in red  the
+                counter again goes from 2 to 3 and it must changes to red. If other users have taken all
+                motorcyclists, the box should appear red and should not let me
+                take that schedule. Values must be updated in real time.
+            </p>
+
+            <div className={styleslandingRoute.containerLinksContact}>
+                <a tabIndex={"0"} className={styleslandingRoute.linksContact} target="_blank" href="https://www.linkedin.com/in/jean-pierre-veliz/">linkedin</a>
+                <a tabIndex={"0"} className={styleslandingRoute.linksContact} target="_blank" href="https://www.instagram.com/jeanpierre_veliz/">instagram</a>
+                <a tabIndex={"0"} className={styleslandingRoute.linksContact} target="_blank" href="https://twitter.com/sweetJean26">x</a>
+            </div>
+        </div>
+
         <div className={styleslandingRoute.buttonsLoginContainer}>
             <Link tabIndex={"1"}  to={publicRoutes.LOGIN_PUBLIC} className={`${styleslandingRoute.button} ${styleslandingRoute.login}`}>Log in</Link>
             <Link tabIndex={"1"}  to={publicRoutes.SIGNUP_PUBLIC} className={`${styleslandingRoute.button} ${styleslandingRoute.signup}`}>Sign up</Link>

@@ -9,7 +9,6 @@ import CardUserLogeado from "../components/cardUserLogeado";
 
 //css
 import stylesMyApp from "../styles/stylesRoutes/MyApp.module.css";
-import uiStyles from "../styles/uiStyles.module.css"
 
 // funciones db de firestore
 import { collection, getDocs, addDoc, getDoc, doc, query, where, setDoc, onSnapshot, deleteDoc } from "firebase/firestore"; 
@@ -69,20 +68,6 @@ export default function MyApp(){
             <CardUserLogeado/>
 
 
-            <p tabIndex={"0"}  className={stylesMyApp.descriptionProyect}>
-                Build a list containing time slots, in 30-min intervals.
-                Let it start at 9 am and end at 5 pm. The company
-                has availability of 8 motorcyclists every 30 min. when someone does
-                clicking on one of these little boxes should take a biker resource.
-                In other words, a counter that starts at 3 and then goes down to 2, in addition to marking the
-                box in red If the same user clicks on the same box, he must release
-                the resource if it was in red  the
-                counter again goes from 2 to 3 and it must changes to red. If other users have taken all
-                motorcyclists, the box should appear red and should not let me
-                take that schedule. Values must be updated in real time.
-                
-            </p>
-
 
             <div className={stylesMyApp.repartidorBoxContenedor}>
                 <RepartidorBox time="9:00"  repartidoresSpecific={repartidores[0]}  repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[0]} arrayIndiceInDb={0} />
@@ -107,7 +92,7 @@ export default function MyApp(){
             
 
             
-            <footer className={stylesMyApp.footer}>
+            {/* <footer className={stylesMyApp.footer}>
                 <div className={stylesMyApp.footer_aContainer}>
                     <a className={stylesMyApp.footer_a} href="">©ejerciciofirebase.github.io</a>
                 </div>
@@ -121,7 +106,7 @@ export default function MyApp(){
                     <a className={stylesMyApp.footer_a} target="_blank" href="https://www.instagram.com/jeanpierre_veliz/">Instagram</a>
                 </div>
             </footer>
-            
+             */}
 
 
 
