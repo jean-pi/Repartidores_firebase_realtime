@@ -37,8 +37,9 @@ function CardUserLogeado() {
     <div className={cardUsercss.cardUserContainer}>
         <img className={cardUsercss.img} src={userDataLocal.photoURL} alt="userImg" />
         <div className={cardUsercss.emailNameContainer}>
+                        <span className={cardUsercss.emailNameContainer_name}>{userDataLocal.diplayName.length > 15 ? `${userDataLocal.diplayName.substring(0,25)}...` : userDataLocal.diplayName }</span>
+
             <span className={cardUsercss.emailNameContainer_email}>{userDataLocal.email}</span>
-            <span className={cardUsercss.emailNameContainer_name}>{userDataLocal.diplayName.length > 15 ? `${userDataLocal.diplayName.substring(0,25)}...` : userDataLocal.diplayName }</span>
         </div>
         <button className={cardUsercss.buttonLogOut} onClick={signOut}>Log out</button>
     </div>

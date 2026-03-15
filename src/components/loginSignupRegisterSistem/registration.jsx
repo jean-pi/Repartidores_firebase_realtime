@@ -62,6 +62,7 @@ export default function RegistrationForm(){
         if(e.target.files[0]){
             const reader = new FileReader();
             const {name} = e.target;
+            console.log(auth.currentUser);
             reader.onload = (e)=>{
                 let urlData = e.target.result;
                 imgUserImage.current.src = urlData ;
@@ -79,7 +80,9 @@ export default function RegistrationForm(){
         setButtonTreeStates(uiStyles.buttonSubmit2_loading)
         try {
             const refUserAvatar = ref(storage, `avatarUsers/useravatar:${auth.currentUser.uid}`);
+
             await uploadString(refUserAvatar, values.userPhoto, "data_url");
+
             let urlServerImg = await getDownloadURL(refUserAvatar);
             await updateProfile(auth.currentUser,{
                 displayName: values.nameUser, 
@@ -144,7 +147,7 @@ export default function RegistrationForm(){
                             Add a photo
                         </div>
                         <span className={stylesText.text070rem}>What should we call you?</span>
-                        <input tabIndex={"0"} className={uiStyles.inputText} type="text" name="nameUser" maxlength="15" value={values.nameUser} onChange={handleInputChangeValues} autoComplete="off" placeholder="e.g. Ada Lovelace, Ada, AL" />
+                        <input tabIndex={"0"} className={uiStyles.inputText} type="text" name="nameUser" maxLength={15} value={values.nameUser} onChange={handleInputChangeValues} autoComplete="off" placeholder="e.g. Ada Lovelace, Ada, AL" />
                         <button tabIndex={"0"} className={buttonTreeStates} type="submit" disabled = {values.nameUser? false: true}>
                             <span></span>
                             Continue
