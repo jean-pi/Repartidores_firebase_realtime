@@ -37,9 +37,13 @@
     font-weight: 600;
     text-decoration: underline;
     cursor: pointer;
+    transition: all 80ms ease-in-out;
 }
 .text070remLink:hover{
-    color: rgba(255, 0, 0, 0.521);
+    color: rgb(0, 0, 0);
+}
+.text070remStriking:hover{
+    color: rgb(254, 69, 69);
 }
 .text070remLink:focus{
     outline: 2px solid rgba(7, 168, 255, 0.559);
@@ -49,16 +53,16 @@
 }
 .text070rem_red{
     color: #ff030bb8;
-    
 }
 
 /* -------------------------------------------------- */
 
 .textError{
-    color: rgba(216, 5, 5, 0.516);
+    color: rgba(7, 168, 255, 0.559);
     text-align: center;
     font-size: .92rem;
     font-family: Helvetica, sans-serif;
+    font-style: italic;
 }
 
 .cursiva1rem{

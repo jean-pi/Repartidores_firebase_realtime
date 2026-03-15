@@ -8,14 +8,16 @@
     text-align: center;
     margin: .4rem 0;
     font-family: Arial, Helvetica, sans-serif;
-    color: rgba(0, 0, 0, 0.725);
+    color: rgba(0, 0, 0, 0.866);
     white-space: nowrap;
+    font-size: 1.5rem;
 }
 .h3{
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    color: rgba(0, 0, 0, 0.497);
+    color: rgba(0, 0, 0, 0.819);
     font-weight: 100;
+    font-size: 1rem;
     white-space: nowrap;
 }
 
@@ -47,23 +49,25 @@
 }
 
 .buttonAddFotoContainer{
-    width: 5rem;
-    height: 1.6;
+    width: 4.5rem;
+    height: 1.4rem;
     font-family:  sans-serif;
     white-space: noWrap;
    position: relative;
-   margin: 0 auto .7rem auto;
+   margin: 0 auto 1.5rem auto;
    padding: .3rem;
    border-radius: 4px;
    text-align: center;
-   font-size: .8rem;
+   font-size: .73rem;
+    color: rgba(0, 0, 0, 0.541);
    background-color: rgba(226, 225, 225, 0.36);
+   transition: all 100ms ease-in-out;
 }
 .buttonAddFotoContainer:hover{
     background-color: rgb(231, 231, 231);
 }
 .buttonAddFoto{
-    width: 4.87rem;
+    width: 4.47rem;
     height: 1.27rem;
     position: absolute;
     top: 2px;

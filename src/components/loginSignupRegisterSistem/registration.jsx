@@ -127,7 +127,7 @@ export default function RegistrationForm(){
             {registerComplete === false && (
                 <div className={stylesRegistration.registrationContainerComponent}>
                     <h1 className={stylesRegistration.h1}>Welcome</h1>
-                    <h3 className={stylesRegistration.h3}>First things first, tell us a bit about yourself.</h3>
+                    <h3 className={stylesRegistration.h3}>First things first. tell us a bit about yourself.</h3>
 
                     <form className={stylesRegistration.registrationForm} tabIndex={0} onSubmit={formSubmit}>
                         <img className={stylesRegistration.image} src={values.userPhoto} alt="avatar" ref={imgUserImage} />
@@ -141,7 +141,7 @@ export default function RegistrationForm(){
                             aria-label="foto ususario"
                             accept="image/png, image/jpeg"
                             />
-                            add a photo
+                            Add a photo
                         </div>
                         <span className={stylesText.text070rem}>What should we call you?</span>
                         <input tabIndex={"0"} className={uiStyles.inputText} type="text" name="nameUser" maxlength="15" value={values.nameUser} onChange={handleInputChangeValues} autoComplete="off" placeholder="e.g. Ada Lovelace, Ada, AL" />

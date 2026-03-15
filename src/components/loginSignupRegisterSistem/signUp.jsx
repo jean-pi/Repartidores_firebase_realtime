@@ -16,7 +16,7 @@ export default function SignUpEmailPasswordForm(){
     
     //COMPONETES FUNCIONALES: mind its own bunisses
     // .map .filter .reduce y demas son puras CREAN UNA COPIA DEL ARREGLO 
-    //cambio por referencian, las variables no tiene un nuevo valor al final de la vida del componente
+    //cambio por referencia, las variables no tiene un nuevo valor al final de la vida del componente
 
     const [errorMessage, setErrorMesagge] = useState("");
     const [buttonLoading, setButtonLoading] = useState(false);

@@ -124,6 +124,8 @@ export default function LoginEmailPasswordForm(){
         setButtonLoading(true);
         setMessageVerificatedEmail();
         setErrorMesagge("")
+        setRecoverPasswordState(false);
+        setErrorMessageRecoverEmail("");
         try {
             if(values.email === "") throw Error("email-empty")
             if(values.password === "") throw Error("password-empty");
@@ -255,6 +257,7 @@ export default function LoginEmailPasswordForm(){
             setMessageRecoverEmail(false);
         } else {
             setRecoverPasswordState(true)
+            setErrorMesagge("")
         }
     }
 

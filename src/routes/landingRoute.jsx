@@ -14,7 +14,7 @@ return (
 
         <div  className={styleslandingRoute.containerDescriptionProyect}>
             <p tabIndex={"0"}  className={styleslandingRoute.descriptionProyect}>
-                /*Build a list containing time slots, in 30-min intervals.
+                Build a list containing time slots, in 30-min intervals.
                 Let it start at 9 am and end at 5 pm. The company
                 has availability of 8 motorcyclists every 30 min. when someone does
                 clicking on one of these little boxes should take a biker resource.
@@ -23,9 +23,13 @@ return (
                 the resource if it was in red  the
                 counter again goes from 2 to 3 and it must changes to red. If other users have taken all
                 motorcyclists, the box should appear red and should not let me
-                take that schedule. Values must be updated in real time*/
+                take that schedule. Values must be updated in real time
             </p>
-
+            <a className={styleslandingRoute.linkGitHub} 
+                img src="/assets/github.png" alt="github icon"
+                href="https://github.com/jean-pi/Repartidores_firebase_realtime" target="_blank" rel="noopener noreferrer">
+                ⇱ View on GitHub
+            </a>
 
         </div>
 
