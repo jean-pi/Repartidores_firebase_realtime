@@ -1,19 +1,108 @@
 
-.contenedorMainApp{
-    
+.main{
+    max-width: 1500px;
+    margin: 0 auto;
 }
 
 .repartidorBoxContenedor{
-    display: flex;
-    max-width: 90rem;
-    margin: 0 auto;
-    flex-wrap: wrap;
-    padding: 1rem;
-    justify-content: center;
-    padding-bottom: 3rem;
+    display: grid;
+    grid-template-columns: repeat(7, calc((100%/ 7) - (6rem / 7)));
+    grid-template-rows: repeat(2, 13.5rem);
+    gap: 1rem;
+    padding: 1.2rem;
+}
+
+@media (max-width:  90.625em){ 
+    /* 1450px */
+    .repartidorBoxContenedor{
+        grid-template-columns: repeat(6, calc((100%/ 6) - (5rem / 6)));
+        grid-template-rows: repeat(3, 13.5rem);
+    }
+}
+@media (max-width:  81.25em){ 
+    /* 1300px */
+    .repartidorBoxContenedor{
+        grid-template-columns: repeat(5, calc((100%/ 5) - (4rem / 5)));
+        grid-template-rows: repeat(3, 13.5rem);
+    }
+}
+@media (max-width:  65.625em){ 
+    /* 1050px */
+    .repartidorBoxContenedor{
+        padding: 0 1.2rem 2rem 1.2rem;
+        grid-template-columns: repeat(4, calc((100%/ 4) - (2.9rem / 4)));
+        grid-template-rows: repeat(3, 13.5rem);
+    }
+}
+@media (max-width:  53.125em){ 
+    /* 850px */
+    .repartidorBoxContenedor{
+        grid-template-columns: repeat(3, calc((100%/ 3) - (2.1rem / 3)));
+        grid-template-rows: repeat(3, 13.5rem);
+    }
+}
+@media (max-width:  37.5em){ 
+    /* 600px */
+    .repartidorBoxContenedor{
+        grid-template-columns: repeat(2, calc((100%/ 2) - (1.1rem / 2)));
+        grid-template-rows: repeat(3, 13.5rem);
+    }
+}
+@media (max-width:  23.125em){ 
+    /* 370px */
+    .repartidorBoxContenedor{
+        gap: 0.6rem;
+        grid-template-columns: repeat(2, calc((100%/ 2) - (0.8rem / 2)));
+
+    }
 }
 
 
+
+
+.containerDescriptionProyect{
+    height: 100%;
+    display: flex;
+    padding: 2rem 1.2rem 1.2rem 1.2rem;
+    flex-direction: column;
+    justify-content: center;
+}
+@media (max-width:  65.625em){ 
+    /* 1050px */
+    .containerDescriptionProyect{
+        padding: 3rem 1.2rem;
+    }
+    
+}
+
+.descriptionProyect{
+    font-family: Helvetica, sans-serif;
+    color: rgb(32, 32, 32);
+    text-align: justify;
+    letter-spacing: 0.05rem;
+    font-size: 0.8rem;
+    font-weight:lighter;
+}
+
+@media (max-width:  23.125em){ 
+    /* 370px */
+    .descriptionProyect{
+        font-size: .8rem;
+        line-height: 1.1rem;
+    }   
+}
+
+.linkGitHub{
+    margin-top: 0.5rem;
+    font-family: Helvetica, sans-serif;
+    font-size: 0.8rem;
+    color: rgb(32, 32, 32);
+    border: 2px solid rgba(255, 255, 255, 0);
+}
+.linkGitHub:focus{
+    border: 2px solid rgba(11, 168, 252, 0.893);
+}
+ 
 
 /* 
 .footer{

@@ -89,18 +89,20 @@ export default function RepartidorBox({time, repartidoresSpecific, repartidoresT
 
     return(
     <div className={`${stylesRepartidorBox.repartidorBox} ${!isDisponible? stylesRepartidorBox.repartidorBox_disabled : stylesRepartidorBox.repartidorBox_active }`}>
+
         <p >Motorcyclists: {repartidoresSpecific} </p>
-        <div  onClick={handleClickOrdenar} className={`${stylesRepartidorBox.repartidorBoxButton} ${!isDisponible? stylesRepartidorBox.repartidorBoxButton_disabled : stylesRepartidorBox.repartidorBoxButton_active }`}> {isDisponible? "Make an order" : "Cancel order"} </div>
+
         <div>{time}</div>
         
         <span className={stylesRepartidorBox.repartidorUserSpan}>Users:</span>
+
         <div className={stylesRepartidorBox.repartidorUserContainer}>
             <div className={stylesRepartidorBox.repartidorbox_users}>{`${repartidoresTomados[0]}`} </div>
             <div className={stylesRepartidorBox.repartidorbox_users}>{`${repartidoresTomados[1]}`} </div>
             <div className={stylesRepartidorBox.repartidorbox_users}>{`${repartidoresTomados[2]}`} </div>
         </div>
 
-
+        <div  onClick={handleClickOrdenar} className={`${stylesRepartidorBox.repartidorBoxButton} ${!isDisponible? stylesRepartidorBox.repartidorBoxButton_disabled : stylesRepartidorBox.repartidorBoxButton_active }`}> {isDisponible? "Make an order" : "Cancel order"} </div>
 
    </div>
     );

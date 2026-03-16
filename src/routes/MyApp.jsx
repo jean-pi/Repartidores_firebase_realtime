@@ -67,27 +67,49 @@ export default function MyApp(){
 
             <CardUserLogeado/>
 
+            <main className={stylesMyApp.main}>
+                <div  className={stylesMyApp.containerDescriptionProyect}>
+                    <p tabIndex={"0"}  className={stylesMyApp.descriptionProyect}>
+                        Build a list containing time slots, in 30-min intervals.
+                        Let it start at 9 am and end at 5 pm. The company
+                        has availability of 8 motorcyclists every 30 min. when someone does
+                        clicking on one of these little boxes should take a biker resource.
+                        In other words, a counter that starts at 3 and then goes down to 2, in addition to marking the
+                        box in red If the same user clicks on the same box, he must release
+                        the resource if it was in red  the
+                        counter again goes from 2 to 3 and it must changes to red. If other users have taken all
+                        motorcyclists, the box should appear red and should not let me
+                        take that schedule. Values must be updated in real time.
+                    </p>
+                    <a className={stylesMyApp.linkGitHub} 
+                        img src="/assets/github.png" alt="github icon"
+                        href="https://github.com/jean-pi/Repartidores_firebase_realtime" target="_blank" rel="noopener noreferrer">
+                        ⇱ View on GitHub
+                    </a>
+                </div>
+            
 
-
-            <div className={stylesMyApp.repartidorBoxContenedor}>
-                <RepartidorBox time="9:00"  repartidoresSpecific={repartidores[0]}  repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[0]} arrayIndiceInDb={0} />
-                <RepartidorBox time="9:30"  repartidoresSpecific={repartidores[1]}  repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[1]} arrayIndiceInDb={1} />
-                <RepartidorBox time="10:00" repartidoresSpecific={repartidores[2]}  repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[2]} arrayIndiceInDb={2} />
-                <RepartidorBox time="10:30" repartidoresSpecific={repartidores[3]}  repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[3]} arrayIndiceInDb={3} />
-                <RepartidorBox time="11:00" repartidoresSpecific={repartidores[4]}  repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[4]} arrayIndiceInDb={4} />
-                <RepartidorBox time="11:30" repartidoresSpecific={repartidores[5]}  repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[5]} arrayIndiceInDb={5} />
-                <RepartidorBox time="12:00" repartidoresSpecific={repartidores[6]}  repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[6]} arrayIndiceInDb={6} />
-                <RepartidorBox time="12:30" repartidoresSpecific={repartidores[7]}  repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[7]} arrayIndiceInDb={7} />
-                <RepartidorBox time="13:00" repartidoresSpecific={repartidores[8]}  repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[8]} arrayIndiceInDb={8} />
-                <RepartidorBox time="13:30" repartidoresSpecific={repartidores[9]}  repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[9]} arrayIndiceInDb={9}  />
-                <RepartidorBox time="14:00" repartidoresSpecific={repartidores[10]} repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[10]} arrayIndiceInDb={10}  />
-                <RepartidorBox time="14:30" repartidoresSpecific={repartidores[11]} repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[11]} arrayIndiceInDb={11}  />
-                <RepartidorBox time="15:00" repartidoresSpecific={repartidores[12]} repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[12]} arrayIndiceInDb={12}  />
-                <RepartidorBox time="15:30" repartidoresSpecific={repartidores[13]} repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[13]} arrayIndiceInDb={13}  />
-                <RepartidorBox time="16:00" repartidoresSpecific={repartidores[14]} repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[14]} arrayIndiceInDb={14}  />
-                <RepartidorBox time="16:30" repartidoresSpecific={repartidores[15]} repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[15]} arrayIndiceInDb={15}  />
-                <RepartidorBox time="17:00" repartidoresSpecific={repartidores[16]} repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[16]} arrayIndiceInDb={16}  />
-            </div>
+                <div className={stylesMyApp.repartidorBoxContenedor}>
+                    <RepartidorBox time="9:00"  repartidoresSpecific={repartidores[0]}  repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[0]} arrayIndiceInDb={0} />
+                    <RepartidorBox time="9:30"  repartidoresSpecific={repartidores[1]}  repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[1]} arrayIndiceInDb={1} />
+                    <RepartidorBox time="10:00" repartidoresSpecific={repartidores[2]}  repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[2]} arrayIndiceInDb={2} />
+                    <RepartidorBox time="10:30" repartidoresSpecific={repartidores[3]}  repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[3]} arrayIndiceInDb={3} />
+                    <RepartidorBox time="11:00" repartidoresSpecific={repartidores[4]}  repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[4]} arrayIndiceInDb={4} />
+                    <RepartidorBox time="11:30" repartidoresSpecific={repartidores[5]}  repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[5]} arrayIndiceInDb={5} />
+                    <RepartidorBox time="12:00" repartidoresSpecific={repartidores[6]}  repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[6]} arrayIndiceInDb={6} />
+                    <RepartidorBox time="12:30" repartidoresSpecific={repartidores[7]}  repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[7]} arrayIndiceInDb={7} />
+                    <RepartidorBox time="13:00" repartidoresSpecific={repartidores[8]}  repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[8]} arrayIndiceInDb={8} />
+                    <RepartidorBox time="13:30" repartidoresSpecific={repartidores[9]}  repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[9]} arrayIndiceInDb={9}  />
+                    <RepartidorBox time="14:00" repartidoresSpecific={repartidores[10]} repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[10]} arrayIndiceInDb={10}  />
+                    <RepartidorBox time="14:30" repartidoresSpecific={repartidores[11]} repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[11]} arrayIndiceInDb={11}  />
+                    <RepartidorBox time="15:00" repartidoresSpecific={repartidores[12]} repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[12]} arrayIndiceInDb={12}  />
+                    <RepartidorBox time="15:30" repartidoresSpecific={repartidores[13]} repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[13]} arrayIndiceInDb={13}  />
+                    {/* <RepartidorBox time="16:00" repartidoresSpecific={repartidores[14]} repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[14]} arrayIndiceInDb={14}  />
+                    <RepartidorBox time="16:30" repartidoresSpecific={repartidores[15]} repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[15]} arrayIndiceInDb={15}  />
+                    <RepartidorBox time="17:00" repartidoresSpecific={repartidores[16]} repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[16]} arrayIndiceInDb={16}  /> */}
+                </div>
+            </main>
+            
             
             
 
