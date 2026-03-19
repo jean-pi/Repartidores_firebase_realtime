@@ -2,10 +2,9 @@
 
 .landingRouteContainer{
     display: grid;
-    grid-template-columns: 55% 45%;
+    grid-template-columns: 60% 40%;
     width: 100%;
     min-height: 101vh;
-    padding: 2.5rem;
 }
 @media (max-width:  59.375em){ 
     /* 950px */
@@ -31,7 +30,7 @@
     grid-column-end: 2;
     border-radius: 24px;
     height: 100%;
-    padding: 3rem 2rem 3rem 4rem;
+    padding: 4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -120,15 +119,18 @@
     font-weight:700;
     letter-spacing: 1px;
     cursor: pointer;
-    /*===== Configurable Variables =====*/
-  /*======= Only these change! =======*/
-  --color: #f2f2f2;
+}
+
+
+
+.login{
+    --color: #f2f2f27d;
   --radius: 8%;
   --elevation: 1px;
   --bevel: 1px;
   --angle: 267deg;
-  --intensity: 12;
-  --diffusion: 25;
+  --intensity: 8;
+  --diffusion: 11;
 
   /*======= Computed Variables =======*/
   --sin: calc(sin(var(--angle)));
@@ -155,30 +157,70 @@
     var(--color);
   /*======== Static Properties ========*/
   background-blend-mode: soft-light;
+  border: 1px solid rgba(0, 0, 0, 0.025);
 
-}
-
-
-
-.login{
-  border-radius: 4px;
-  color: rgba(0, 0, 0, 0.732);
+    color: rgba(0, 0, 0, 0.732);
+    border-radius: 4px  ;
+    transition: all 100ms ease-in-out;
 }
 
 .login:hover{
-    border: 2.5px solid rgb(65, 65, 65);
+    background-color: rgba(243, 243, 243, 0.088);
+}
+.login:focus{
+    border: 1.5px solid rgba(104, 104, 104, 0.088);
 }
 
+
 .signup{
-   border-radius: 4px;
-   border: 1px solid rgba(199, 199, 199, 0.516);
+     --color: #121212;
+  --radius: 8%;
+  --elevation: 1px;
+  --bevel: 1px;
+  --angle: 267deg;
+  --intensity: 35;
+  --diffusion: 19;
+
+  /*======= Computed Variables =======*/
+  --sin: calc(sin(var(--angle)));
+  --cos: calc(cos(var(--angle)));
+  --x-displacement: calc(-1 * var(--cos) * (var(--elevation) + 1px));
+  --y-displacement: calc(-1 * var(--sin) * (var(--elevation) + 1px));
+  --edge-opacity: calc(var(--intensity) * 0.006 - var(--diffusion) * 0.002);
+  --edge-blur: calc(var(--bevel) * 1.5);
+  --surface-contrast: calc(var(--intensity) * 0.01 - var(--diffusion) * 0.005);
+
+  /*======= Computed Properties =======*/
+  border-radius: var(--radius);
+  box-shadow: var(--x-displacement) var(--y-displacement) calc(var(--diffusion) * 0.3px + (var(--elevation))) calc(var(--elevation) / 2) rgba(0, 0, 0, calc(var(--intensity) * 0.006)),
+    0px 0px calc(var(--diffusion) * 1.4px) rgba(255, 255, 255, calc(var(--intensity) * 0.004)),
+    inset calc(var(--bevel) * -1) 0 var(--edge-blur) hsla(100, 0%, calc((var(--cos) + 1) * 50%), var(--edge-opacity)),
+    inset 0 var(--bevel) var(--edge-blur) hsla(100, 0%, calc((-1 * var(--sin) + 1) * 50%), var(--edge-opacity)),
+    inset var(--bevel) 0 var(--edge-blur) hsla(100, 0%, calc((-1 * var(--cos) + 1) * 50%), var(--edge-opacity)),
+    inset 0 calc(var(--bevel) * -1) var(--edge-blur) hsla(100, 0%, calc((var(--sin) + 1) * 50%), var(--edge-opacity));
+  background: linear-gradient(
+    calc(var(--angle) + 90deg),
+    rgba(0, 0, 0, var(--surface-contrast)),
+    rgba(255, 255, 255, var(--surface-contrast))
+    ),
+    var(--color);
+  /*======== Static Properties ========*/
+  background-blend-mode: soft-light;
+  border: 1px solid rgba(0, 0, 0, 0.025);
+
+  
+     border-radius: 4px;
    color: rgba(255, 255, 255, 0.91);
-   background-color: rgba(0, 0, 0, 0.925);
+   transition: all 100ms ease-in-out;
 }
 
 .signup:hover{
-    border: 2.5px solid rgb(65, 65, 65);
+    background-color: rgba(0, 0, 0, 0.86); 
 }
+.signup:focus{
+   border: 1px solid rgba(162, 162, 162, 0.842);
+}
+
 
 
 

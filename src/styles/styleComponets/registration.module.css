@@ -51,27 +51,65 @@
 .buttonAddFotoContainer{
     width: 4.5rem;
     height: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family:  sans-serif;
     white-space: noWrap;
    position: relative;
    margin: 0 auto 1.5rem auto;
-   padding: .3rem;
    border-radius: 4px;
    text-align: center;
    font-size: .73rem;
-    color: rgba(0, 0, 0, 0.541);
+    color: rgba(0, 0, 0, 0.363);
    background-color: rgba(226, 225, 225, 0.36);
    transition: all 100ms ease-in-out;
+
+    --color: #f2f2f27d;
+  --radius: 0%;
+  --elevation: 0px;
+  --bevel: 1px;
+  --angle: 200deg;
+  --intensity: 4;
+  --diffusion: 9;
+
+  /*======= Computed Variables =======*/
+  --sin: calc(sin(var(--angle)));
+  --cos: calc(cos(var(--angle)));
+  --x-displacement: calc(-1 * var(--cos) * (var(--elevation) + 1px));
+  --y-displacement: calc(-1 * var(--sin) * (var(--elevation) + 1px));
+  --edge-opacity: calc(var(--intensity) * 0.006 - var(--diffusion) * 0.002);
+  --edge-blur: calc(var(--bevel) * 1.5);
+  --surface-contrast: calc(var(--intensity) * 0.01 - var(--diffusion) * 0.005);
+
+  /*======= Computed Properties =======*/
+  border-radius: var(--radius);
+  box-shadow: var(--x-displacement) var(--y-displacement) calc(var(--diffusion) * 0.3px + (var(--elevation))) calc(var(--elevation) / 2) rgba(0, 0, 0, calc(var(--intensity) * 0.006)),
+    0px 0px calc(var(--diffusion) * 1.4px) rgba(255, 255, 255, calc(var(--intensity) * 0.004)),
+    inset calc(var(--bevel) * -1) 0 var(--edge-blur) hsla(100, 0%, calc((var(--cos) + 1) * 50%), var(--edge-opacity)),
+    inset 0 var(--bevel) var(--edge-blur) hsla(100, 0%, calc((-1 * var(--sin) + 1) * 50%), var(--edge-opacity)),
+    inset var(--bevel) 0 var(--edge-blur) hsla(100, 0%, calc((-1 * var(--cos) + 1) * 50%), var(--edge-opacity)),
+    inset 0 calc(var(--bevel) * -1) var(--edge-blur) hsla(100, 0%, calc((var(--sin) + 1) * 50%), var(--edge-opacity));
+  background: linear-gradient(
+    calc(var(--angle) + 90deg),
+    rgba(0, 0, 0, var(--surface-contrast)),
+    rgba(255, 255, 255, var(--surface-contrast))
+    ),
+    var(--color);
+  /*======== Static Properties ========*/
+  background-blend-mode: soft-light;
+  border: 1px solid rgba(0, 0, 0, 0.025);
+
+  border-radius: 4px;
+  transition: all 100ms ease-in-out;
 }
 .buttonAddFotoContainer:hover{
-    background-color: rgb(231, 231, 231);
+    background-color: #bcbcbc25;
 }
 .buttonAddFoto{
     width: 4.47rem;
     height: 1.27rem;
     position: absolute;
-    top: 2px;
-    left: 1px;
     opacity: 100%;
     border-radius: 4px;
     font-family:  sans-serif;

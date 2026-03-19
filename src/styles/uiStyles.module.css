@@ -182,8 +182,7 @@
 .buttonSubmit2{ 
     width: 20rem;
     height: 2rem;
-    background-color: rgba(118, 204, 251, 0.893);
-    border: 1px solid rgb(81, 192, 252);
+    border: 1px solid rgb(74, 192, 255);
     border-radius: 4px;
     font-family: Arial, Helvetica, sans-serif;
     padding-left: .5rem ;
@@ -193,13 +192,50 @@
     font-weight:700;
     letter-spacing: 1px;
     cursor: initial;
+
+     --color: rgba(118, 204, 251, 0.893);
+  --radius: 8%;
+  --elevation: 1px;
+  --bevel: 1px;
+  --angle: 267deg;
+  --intensity: 20;
+  --diffusion: 25;
+
+  /*======= Computed Variables =======*/
+  --sin: calc(sin(var(--angle)));
+  --cos: calc(cos(var(--angle)));
+  --x-displacement: calc(-1 * var(--cos) * (var(--elevation) + 1px));
+  --y-displacement: calc(-1 * var(--sin) * (var(--elevation) + 1px));
+  --edge-opacity: calc(var(--intensity) * 0.006 - var(--diffusion) * 0.002);
+  --edge-blur: calc(var(--bevel) * 1.5);
+  --surface-contrast: calc(var(--intensity) * 0.01 - var(--diffusion) * 0.005);
+
+  /*======= Computed Properties =======*/
+  border-radius: var(--radius);
+  box-shadow: var(--x-displacement) var(--y-displacement) calc(var(--diffusion) * 0.3px + (var(--elevation))) calc(var(--elevation) / 2) rgba(0, 0, 0, calc(var(--intensity) * 0.006)),
+    0px 0px calc(var(--diffusion) * 1.4px) rgba(255, 255, 255, calc(var(--intensity) * 0.004)),
+    inset calc(var(--bevel) * -1) 0 var(--edge-blur) hsla(100, 0%, calc((var(--cos) + 1) * 50%), var(--edge-opacity)),
+    inset 0 var(--bevel) var(--edge-blur) hsla(100, 0%, calc((-1 * var(--sin) + 1) * 50%), var(--edge-opacity)),
+    inset var(--bevel) 0 var(--edge-blur) hsla(100, 0%, calc((-1 * var(--cos) + 1) * 50%), var(--edge-opacity)),
+    inset 0 calc(var(--bevel) * -1) var(--edge-blur) hsla(100, 0%, calc((var(--sin) + 1) * 50%), var(--edge-opacity));
+  background: linear-gradient(
+    calc(var(--angle) + 90deg),
+    rgba(0, 0, 0, var(--surface-contrast)),
+    rgba(255, 255, 255, var(--surface-contrast))
+    ),
+    var(--color);
+  /*======== Static Properties ========*/
+  background-blend-mode: soft-light;
+  border: none;
+  border-radius: 4px;
+  padding-right: 11px;
+    transition: all 0ms ease-in-out;
 }
 
 
 
 .buttonSubmit2_active{ /*button activo*/
-    background-color: rgba(11, 168, 252, 0.893);
-    border: 1px solid rgb(6, 156, 236);
+    border: 1px solid rgb(22, 161, 237);
     margin: .5rem 0;
     color: rgb(255, 255, 255);
     cursor: pointer;
@@ -212,6 +248,44 @@
     font-weight:700;
     letter-spacing: 1px;
     cursor: initial;
+    
+         --color: rgba(45, 178, 250, 0.893);
+  --radius: 8%;
+  --elevation: 1px;
+  --bevel: 1px;
+  --angle: 267deg;
+  --intensity: 25;
+  --diffusion: 25;
+
+  /*======= Computed Variables =======*/
+  --sin: calc(sin(var(--angle)));
+  --cos: calc(cos(var(--angle)));
+  --x-displacement: calc(-1 * var(--cos) * (var(--elevation) + 1px));
+  --y-displacement: calc(-1 * var(--sin) * (var(--elevation) + 1px));
+  --edge-opacity: calc(var(--intensity) * 0.006 - var(--diffusion) * 0.002);
+  --edge-blur: calc(var(--bevel) * 1.5);
+  --surface-contrast: calc(var(--intensity) * 0.01 - var(--diffusion) * 0.005);
+
+  /*======= Computed Properties =======*/
+  border-radius: var(--radius);
+  box-shadow: var(--x-displacement) var(--y-displacement) calc(var(--diffusion) * 0.3px + (var(--elevation))) calc(var(--elevation) / 2) rgba(0, 0, 0, calc(var(--intensity) * 0.006)),
+    0px 0px calc(var(--diffusion) * 1.4px) rgba(255, 255, 255, calc(var(--intensity) * 0.004)),
+    inset calc(var(--bevel) * -1) 0 var(--edge-blur) hsla(100, 0%, calc((var(--cos) + 1) * 50%), var(--edge-opacity)),
+    inset 0 var(--bevel) var(--edge-blur) hsla(100, 0%, calc((-1 * var(--sin) + 1) * 50%), var(--edge-opacity)),
+    inset var(--bevel) 0 var(--edge-blur) hsla(100, 0%, calc((-1 * var(--cos) + 1) * 50%), var(--edge-opacity)),
+    inset 0 calc(var(--bevel) * -1) var(--edge-blur) hsla(100, 0%, calc((var(--sin) + 1) * 50%), var(--edge-opacity));
+  background: linear-gradient(
+    calc(var(--angle) + 90deg),
+    rgba(0, 0, 0, var(--surface-contrast)),
+    rgba(255, 255, 255, var(--surface-contrast))
+    ),
+    var(--color);
+  /*======== Static Properties ========*/
+  background-blend-mode: soft-light;
+  border: none;
+  border-radius: 4px;
+  padding-right: 11px;
+    transition: all 120ms ease-in-out;
 }
 
 .buttonSubmit2_active:hover{
@@ -229,7 +303,6 @@
 .buttonSubmit2_loading{
     width: 20rem;
     height: 2rem;
-    background-color: rgba(118, 204, 251, 0.893);
     border: 1px solid rgb(81, 192, 252);
     border-radius: 4px;
     font-family: Arial, Helvetica, sans-serif;
@@ -240,6 +313,44 @@
     font-weight:700;
     letter-spacing: 1px;
     cursor: initial;
+
+             --color: rgba(108, 203, 254, 0.893);
+  --radius: 8%;
+  --elevation: 1px;
+  --bevel: 1px;
+  --angle: 267deg;
+  --intensity: 23;
+  --diffusion: 25;
+
+  /*======= Computed Variables =======*/
+  --sin: calc(sin(var(--angle)));
+  --cos: calc(cos(var(--angle)));
+  --x-displacement: calc(-1 * var(--cos) * (var(--elevation) + 1px));
+  --y-displacement: calc(-1 * var(--sin) * (var(--elevation) + 1px));
+  --edge-opacity: calc(var(--intensity) * 0.006 - var(--diffusion) * 0.002);
+  --edge-blur: calc(var(--bevel) * 1.5);
+  --surface-contrast: calc(var(--intensity) * 0.01 - var(--diffusion) * 0.005);
+
+  /*======= Computed Properties =======*/
+  border-radius: var(--radius);
+  box-shadow: var(--x-displacement) var(--y-displacement) calc(var(--diffusion) * 0.3px + (var(--elevation))) calc(var(--elevation) / 2) rgba(0, 0, 0, calc(var(--intensity) * 0.006)),
+    0px 0px calc(var(--diffusion) * 1.4px) rgba(255, 255, 255, calc(var(--intensity) * 0.004)),
+    inset calc(var(--bevel) * -1) 0 var(--edge-blur) hsla(100, 0%, calc((var(--cos) + 1) * 50%), var(--edge-opacity)),
+    inset 0 var(--bevel) var(--edge-blur) hsla(100, 0%, calc((-1 * var(--sin) + 1) * 50%), var(--edge-opacity)),
+    inset var(--bevel) 0 var(--edge-blur) hsla(100, 0%, calc((-1 * var(--cos) + 1) * 50%), var(--edge-opacity)),
+    inset 0 calc(var(--bevel) * -1) var(--edge-blur) hsla(100, 0%, calc((var(--sin) + 1) * 50%), var(--edge-opacity));
+  background: linear-gradient(
+    calc(var(--angle) + 90deg),
+    rgba(0, 0, 0, var(--surface-contrast)),
+    rgba(255, 255, 255, var(--surface-contrast))
+    ),
+    var(--color);
+  /*======== Static Properties ========*/
+  background-blend-mode: soft-light;
+  border: none;
+  border-radius: 4px;
+  padding-right: 11px;
+    transition: all 0ms ease-in-out;
 }
 .buttonSubmit2_loading>span{
     width: 11px;

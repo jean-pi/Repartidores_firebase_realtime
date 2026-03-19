@@ -53,13 +53,13 @@
 
 .buttonLogOut{
     margin-left: auto;
-    height: 34px;
+    height: 1.6rem;
     background-color: rgb(255, 255, 255);
     border: 1px solid rgba(0, 0, 0, 0.985);
     border-radius: 4px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: .7rem;
-    padding: 0 1.2rem;
+    padding: 0 0.8rem;
     color: rgba(0, 0, 0, 0.858);
     font-weight:700;
     letter-spacing: 1px;

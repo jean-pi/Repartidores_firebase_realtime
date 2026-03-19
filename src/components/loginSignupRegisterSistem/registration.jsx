@@ -139,7 +139,7 @@ export default function RegistrationForm(){
                             className={stylesRegistration.buttonAddFoto} 
                             files={values.userPhoto} 
                             onChange={handleInputChangeFiles} 
-                            name="userPhoto" 
+                              name="userPhoto" 
                             type="file" 
                             aria-label="foto ususario"
                             accept="image/png, image/jpeg"

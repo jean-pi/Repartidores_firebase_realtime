@@ -28,6 +28,7 @@ tomar ese horario.
 -accessibility
 -restablecer contraseña is not working
 -styling feedback, texto celeste
+-puedo entrar a registration con el link?
 
 
 
