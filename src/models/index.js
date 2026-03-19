@@ -1,0 +1,1 @@
+export { default as HydraBackground } from '../components/HydraBackground';

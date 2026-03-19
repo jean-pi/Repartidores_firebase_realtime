@@ -90,11 +90,14 @@ export default function RepartidorBox({time, repartidoresSpecific, repartidoresT
     return(
     <div className={`${stylesRepartidorBox.repartidorBox} ${!isDisponible? stylesRepartidorBox.repartidorBox_disabled : stylesRepartidorBox.repartidorBox_active }`}>
 
-        <p >Motorcyclists: {repartidoresSpecific} </p>
+        <div className={stylesRepartidorBox.horary}>{time}</div>
 
-        <div>{time}</div>
-        
-        <span className={stylesRepartidorBox.repartidorUserSpan}>Users:</span>
+        <div className={stylesRepartidorBox.deliveryDriver}>
+            <div className={stylesRepartidorBox.deliveryDriver_text}>Delivery driver: </div>
+            <div className={stylesRepartidorBox.deliveryDriver_count}>{repartidoresSpecific}</div>
+        </div>
+
+        {/* <span className={stylesRepartidorBox.repartidorUserSpan}>Users:</span> */}
 
         <div className={stylesRepartidorBox.repartidorUserContainer}>
             <div className={stylesRepartidorBox.repartidorbox_users}>{`${repartidoresTomados[0]}`} </div>

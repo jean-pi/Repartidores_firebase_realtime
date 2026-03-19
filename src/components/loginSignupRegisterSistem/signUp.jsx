@@ -90,7 +90,7 @@ export default function SignUpEmailPasswordForm(){
                 //     setErrorMesagge("Enter a password.");
                 // }
                 if(err.code === "auth/weak-password"){
-                    setErrorMesagge("Make sure it's at least at least 6 characters.");
+                    setErrorMesagge("Make sure it's at least 6 characters.");
                 }
                 if(err.code === "auth/invalid-email"){
                     setErrorMesagge("Invalid email address.");

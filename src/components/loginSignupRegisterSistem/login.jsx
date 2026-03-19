@@ -325,7 +325,7 @@ export default function LoginEmailPasswordForm(){
                             Continue with email
                         </button>
                         <div className={`${stylesText.text070rem} ${stylesText.text070remCenter}`}>You do not have an account yet? <Link className={`${stylesText.text070rem} ${stylesText.text070remLink}`} to={publicRoutes.SIGNUP_PUBLIC}>Sign up</Link></div>
-                        <Link tabIndex={"0"} className={`${stylesText.text070rem} ${stylesText.text070remCenter} ${stylesText.text070remLink}`} onClick={activeNonActiveRecoverPassword}>Did you forget your password? </Link>
+                        <Link tabIndex={"0"} className={`${stylesText.text070remCenter} ${stylesText.text070rem} ${stylesText.text070remLink}`} onClick={activeNonActiveRecoverPassword}>Did you forget your password? </Link>
                     </form>
    
 

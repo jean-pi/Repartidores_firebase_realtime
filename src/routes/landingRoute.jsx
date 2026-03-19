@@ -6,11 +6,16 @@ import stylesText from "../styles/texts.module.css"
 import { publicRoutes } from "../models/routes";
 import { useEffect } from "react";
 
+
 export default function LandingView(){
+
+
 
 return (
 
     <div className={styleslandingRoute.landingRouteContainer}>
+
+
 
         <div  className={styleslandingRoute.containerDescriptionProyect}>
             <p tabIndex={"0"}  className={styleslandingRoute.descriptionProyect}>
@@ -23,7 +28,7 @@ return (
                 the resource if it was in red  the
                 counter again goes from 2 to 3 and it must changes to red. If other users have taken all
                 motorcyclists, the box should appear red and should not let me
-                take that schedule. Values must be updated in real time
+                take that schedule. Values must be updated in real time.
             </p>
             <a className={styleslandingRoute.linkGitHub} 
                 img src="/assets/github.png" alt="github icon"

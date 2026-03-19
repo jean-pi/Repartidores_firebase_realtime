@@ -23,7 +23,12 @@ tomar ese horario.
 -caja roja cuando no haya motociclistas disponibles✅
 -aumentar y disminuir la cantidad de motociclistas de la base de datos✅
 -pantalla de carga de milisegundos para evitar que se vea la redireccion y la carga de la cantidad de motociclistas
--firebase functions: eliminar un usuario luego de 30 dias
+-firebase functions: eliminar un usuario luego de 30 dias - eliminar delivery dryver taking
+-si hay una cuenta con sesion iniciada y accedo con un link de verificacion la app se queda iniciado con la cuenta anterior
+-accessibility
+-restablecer contraseña is not working
+-styling feedback, texto celeste
+
 
 
 //push(): añade un alemento al final del arreglo

@@ -10,15 +10,14 @@
 
 .text070rem{    
     font-family: Helvetica, sans-serif;
-    font-size: .75rem;
-    color: rgba(0, 0, 0, 0.703);
+    font-size: .68rem;
+    color: rgba(0, 0, 0, 0.375);
     line-height: .9rem;
+    letter-spacing: .02rem;
 }
 
 .text070remCenter{    
     font-family: Helvetica, sans-serif;
-    font-size: .75rem;
-    color: rgba(0, 0, 0, 0.575);
     line-height: .9rem;
     margin: auto;
 }
