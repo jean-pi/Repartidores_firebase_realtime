@@ -9,6 +9,7 @@ import CardUserLogeado from "../components/cardUserLogeado";
 
 //css
 import stylesMyApp from "../styles/stylesRoutes/MyApp.module.css";
+import uiStyles from "../styles/uiStyles.module.css"
 
 // funciones db de firestore
 import { collection, getDocs, addDoc, getDoc, doc, query, where, setDoc, onSnapshot, deleteDoc } from "firebase/firestore"; 
@@ -19,42 +20,48 @@ import {dbFirestore} from "../firebase/firebaseMyConfig"
 
 export default function MyApp(){
 
+    const [initLoading, setInitLoading] = useState(true);
     const [repartidores, setRepartidores] = useState(["0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0",]);
     const [repartidoresOcupados, setRepartidoresOcupados] = useState([[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],]);
     
 
 
-
-
-    const listenLastestChanges = () =>{
-        return onSnapshot(doc(dbFirestore, "repartidoresCollection", "3Y2mm2xA0C8nlde2UVgo"), (doc) =>{
-            const objRepartidores = doc.data()
-            setRepartidores(objRepartidores.repartidores);   
-            setRepartidoresOcupados([
-                objRepartidores.repartidor900,
-                objRepartidores.repartidor930,
-                objRepartidores.repartidor1000,
-                objRepartidores.repartidor1030,
-                objRepartidores.repartidor1100,
-                objRepartidores.repartidor1130,
-                objRepartidores.repartidor1200,
-                objRepartidores.repartidor1230,
-                objRepartidores.repartidor1300,
-                objRepartidores.repartidor1330,
-                objRepartidores.repartidor1400,
-                objRepartidores.repartidor1430,
-                objRepartidores.repartidor1500,
-                objRepartidores.repartidor1530,
-                objRepartidores.repartidor1600,
-                objRepartidores.repartidor1630,
-                objRepartidores.repartidor1700,
-            ])
-        })
-    }
-
     useEffect( () => {
-        listenLastestChanges()
+
+     // 1. Iniciamos la escucha de Firebase
+    const unsubscribe = onSnapshot(doc(dbFirestore, "repartidoresCollection", "IDrepartidoresCollection"), (doc) => {
         
+            const data = doc.data();
+            setRepartidores(data.repartidores);
+            setRepartidoresOcupados([
+                data.repartidor900,
+                data.repartidor930,
+                data.repartidor1000,
+                data.repartidor1030,
+                data.repartidor1100,
+                data.repartidor1130,
+                data.repartidor1200,
+                data.repartidor1230,
+                data.repartidor1300,
+                data.repartidor1330,
+                data.repartidor1400,
+                data.repartidor1430,
+                data.repartidor1500,
+                data.repartidor1530,
+                data.repartidor1600,
+                data.repartidor1630,
+                data.repartidor1700,
+            ])
+            // 2. Solo cuando los datos llegan, quitamos el loading
+            // Podemos añadir un pequeño delay de 500ms para que no sea un salto brusco
+            setTimeout(() => {
+                setInitLoading(false);
+            }, 300);
+    });
+            console.log(repartidores)
+            console.log(repartidoresOcupados)
+    return () => unsubscribe(); // Limpieza fundamental
+
     }, []); 
 
 
@@ -62,12 +69,22 @@ export default function MyApp(){
     
 
     return(
+
+
+        
         <div className={stylesMyApp.contenedorApp}>
 
 
-            <CardUserLogeado/>
+            {initLoading === true && (
+                <div className={uiStyles.divLoading}>
+                    <span></span> 
+                    Just one second
+                </div>
+            )}
 
-            <main className={stylesMyApp.main}>
+            {initLoading === false && (
+                <main className={stylesMyApp.main}>
+                  <CardUserLogeado/>
                 <div  className={stylesMyApp.containerDescriptionProyect}>
                     <p tabIndex={"0"}  className={stylesMyApp.descriptionProyect}>
                         Build a list containing time slots, in 30-min intervals.
@@ -109,28 +126,9 @@ export default function MyApp(){
                     <RepartidorBox time="17:00" repartidoresSpecific={repartidores[16]} repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[16]} arrayIndiceInDb={16}  /> */}
                 </div>
             </main>
+            )}
             
-            
-            
-
-            
-            {/* <footer className={stylesMyApp.footer}>
-                <div className={stylesMyApp.footer_aContainer}>
-                    <a className={stylesMyApp.footer_a} href="">©ejerciciofirebase.github.io</a>
-                </div>
-                <div className={stylesMyApp.footer_aContainer}>
-                    <a className={stylesMyApp.footer_a} target="_blank" href="https://twitter.com/sweetJean26">X</a>
-                </div>
-                <div className={stylesMyApp.footer_aContainer}>
-                    <a className={stylesMyApp.footer_a} target="_blank" href="https://github.com/jean-pi">Github</a>
-                </div>
-                <div className={stylesMyApp.footer_aContainer}>
-                    <a className={stylesMyApp.footer_a} target="_blank" href="https://www.instagram.com/jeanpierre_veliz/">Instagram</a>
-                </div>
-            </footer>
-             */}
-
-
+          
 
         </div>
     );

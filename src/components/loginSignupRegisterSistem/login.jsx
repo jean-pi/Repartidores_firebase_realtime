@@ -152,7 +152,7 @@ export default function LoginEmailPasswordForm(){
                 window.scroll({
                     top: 0,
                     left: 0,
-                    behavior: "instant",
+                    behavior: "smooth",
                 });
 
 
@@ -163,7 +163,7 @@ export default function LoginEmailPasswordForm(){
                     if(!user.displayName){
                         navigate(restrictedRoutes.REGISTARION_RESTRICTED)
                     }
-                }, 700);
+                }, 300);
             }
 
             if(!isVerificated) {
@@ -172,8 +172,10 @@ export default function LoginEmailPasswordForm(){
                 console.log(auth.currentUser)
             }
 
-            setButtonLoading(false);
-            setErrorMesagge("")
+            setTimeout(() => {
+                setButtonLoading(false);
+                setErrorMesagge("")
+            }, 300)
 
         } catch (error) {
             console.log(error.code)
@@ -266,52 +268,51 @@ export default function LoginEmailPasswordForm(){
     return (
         <div className={stylesLogin.containerLoginComponent}>
 
-            {loginComplete === false && (
+            {/* {loginComplete === false && ( */}
                 <div className={stylesLogin.containerDivLoginComponent} >
                 <h1 className={stylesText.text3rem}>Log in</h1>
 
 
-                    {messageVerificatedEmail === 0 && (
-                        <div className={ `${uiStyles.retroalimentacionDiv} ${uiStyles.retroalimentacionDiv_green}` }>
-                            <p className={`${stylesText.text070rem} ${stylesText.text070rem_green}`}>Your account has been successfully verified! You can login now.</p>
-                        </div>
-                    )}
-                    {messageVerificatedEmail === 1 && (
-                        <div className={ `${uiStyles.retroalimentacionDiv} ${uiStyles.retroalimentacionDiv_green}` }>
-                            <p className={`${stylesText.text070rem} ${stylesText.text070rem_green}`}>Verification Email Sent!</p>
-                        </div>
-                    )}
-                    {messageVerificatedEmail === 2 &&(
-                        <div className={ `${uiStyles.retroalimentacionDiv} ${uiStyles.retroalimentacionDiv_red}` }>
-                            <p className={`${stylesText.text070rem} ${stylesText.text070rem_red}`}>
-                                <b>Error: </b>This account is still pending approval. Please verify your email by clicking on the link sent to your email, if you don't receive the link check in your spam box.
-                                <span className={`${stylesText.text070rem} ${stylesText.text070remStriking}`} onClick={resendVerification}> <br />Resend verification link.</span>
-
-                            </p>
-                        </div>
-                    )}
-                    {messageVerificatedEmail === 3 && (
-                        <div className={ `${uiStyles.retroalimentacionDiv} ${uiStyles.retroalimentacionDiv_red}` }>
-                            <p className={`${stylesText.text070rem} ${stylesText.text070rem_red}`}>
-                            <b>Error: </b>This code has already been used or has expired
-                            </p>
-                        </div>
-                    )}
-                    {messageVerificatedEmail === 4 &&(
-                        <div className={ `${uiStyles.retroalimentacionDiv} ${uiStyles.retroalimentacionDiv_red}` }>
-                            <p className={`${stylesText.text070rem} ${stylesText.text070rem_red}`}>
-                                <b>Error: </b>Too many requests. Verification email recently sent. Check your email
-                            </p>
-                        </div>
-                    )}
-                            {messageVerificatedEmail === 5 && (
-                        <div className={ `${uiStyles.retroalimentacionDiv} ${uiStyles.retroalimentacionDiv_red}` }>
-                            <p className={`${stylesText.text070rem} ${stylesText.text070rem_red}`}>
-                            <b>Error: </b>Verification link is expired.
+                {messageVerificatedEmail === 0 && (
+                    <div className={ `${uiStyles.retroalimentacionDiv} ${uiStyles.retroalimentacionDiv_green}` }>
+                        <p className={`${stylesText.text070rem} ${stylesText.text070rem_green}`}>Your account has been successfully verified! You can login now.</p>
+                    </div>
+                )}
+                {messageVerificatedEmail === 1 && (
+                    <div className={ `${uiStyles.retroalimentacionDiv} ${uiStyles.retroalimentacionDiv_green}` }>
+                        <p className={`${stylesText.text070rem} ${stylesText.text070rem_green}`}>Verification Email Sent!</p>
+                    </div>
+                )}
+                {messageVerificatedEmail === 2 &&(
+                    <div className={ `${uiStyles.retroalimentacionDiv} ${uiStyles.retroalimentacionDiv_red}` }>
+                        <p className={`${stylesText.text070rem} ${stylesText.text070rem_red}`}>
+                            <b>Error: </b>This account is still pending approval. Please verify your email by clicking on the link sent to your email, if you don't receive the link check in your spam box.
                             <span className={`${stylesText.text070rem} ${stylesText.text070remStriking}`} onClick={resendVerification}> <br />Resend verification link.</span>
-                            </p>
-                        </div>
-                    )}
+                        </p>
+                    </div>
+                )}
+                {messageVerificatedEmail === 3 && (
+                    <div className={ `${uiStyles.retroalimentacionDiv} ${uiStyles.retroalimentacionDiv_red}` }>
+                        <p className={`${stylesText.text070rem} ${stylesText.text070rem_red}`}>
+                        <b>Error: </b>This code has already been used or has expired
+                        </p>
+                    </div>
+                )}
+                {messageVerificatedEmail === 4 &&(
+                    <div className={ `${uiStyles.retroalimentacionDiv} ${uiStyles.retroalimentacionDiv_red}` }>
+                        <p className={`${stylesText.text070rem} ${stylesText.text070rem_red}`}>
+                            <b>Error: </b>Too many requests. Verification email recently sent. Check your email
+                        </p>
+                    </div>
+                )}
+                        {messageVerificatedEmail === 5 && (
+                    <div className={ `${uiStyles.retroalimentacionDiv} ${uiStyles.retroalimentacionDiv_red}` }>
+                        <p className={`${stylesText.text070rem} ${stylesText.text070rem_red}`}>
+                        <b>Error: </b>Verification link is expired.
+                        <span className={`${stylesText.text070rem} ${stylesText.text070remStriking}`} onClick={resendVerification}> <br />Resend verification link.</span>
+                        </p>
+                    </div>
+                )}
 
                 
                     <form className={stylesLogin.formLogin} action="" onSubmit={loginSubmit}>
@@ -340,26 +341,22 @@ export default function LoginEmailPasswordForm(){
                     </form>
                 )}
 
-            {messageRecoverEmail && RecoverPasswordState && (
-                <div className={ `${uiStyles.retroalimentacionDiv} ${uiStyles.retroalimentacionDiv_green}` }>
-                    <p className={`${stylesText.text070rem} ${stylesText.text070rem_green}`}>We send recovery link to your email,, If you don't receive the link, please check in your spam box.</p>
-                </div>
-            )}
-
-                
-
-                
+                {messageRecoverEmail && RecoverPasswordState && (
+                    <div className={ `${uiStyles.retroalimentacionDiv} ${uiStyles.retroalimentacionDiv_green}` }>
+                        <p className={`${stylesText.text070rem} ${stylesText.text070rem_green}`}>We send recovery link to your email,, If you don't receive the link, please check in your spam box.</p>
+                    </div>
+                )}
 
             </div>
-            )}
+            {/* )} */}
 
 
-            {loginComplete === true &&(
+            {/* {loginComplete === true &&(
                 <div className={uiStyles.divLoading}>
                     <span></span> 
-                    {auth.currentUser.displayName ? " Logining" : "Just one second"}
+                    Just one second
                 </div>
-            )}
+            )} */}
 
 
 

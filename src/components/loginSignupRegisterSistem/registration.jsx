@@ -113,7 +113,6 @@ export default function RegistrationForm(){
     const logOut = async () =>{
         try {
             console.log(auth.currentUser);
-            console.log("se cerro sesion, porque se quiere logear con otra cuenta")
             localStorage.clear();
             let a=await auth.signOut();
             console.log(a)
@@ -128,6 +127,7 @@ export default function RegistrationForm(){
 
 
             {registerComplete === false && (
+                
                 <div className={stylesRegistration.registrationContainerComponent}>
                     <h1 className={stylesRegistration.h1}>Welcome</h1>
                     <h3 className={stylesRegistration.h3}>First things first. tell us a bit about yourself.</h3>
@@ -157,6 +157,7 @@ export default function RegistrationForm(){
                         <Link to={publicRoutes.LOGIN_PUBLIC} tabIndex={"0"} onClick={logOut} className={`${stylesText.text070rem} ${stylesText.text070remLink} ${stylesText.text070remStriking}`} >Sign in whith another email</Link>
                 </div>
             )}
+            
             
             {registerComplete === true && (
                 <div className={uiStyles.divLoading}>
