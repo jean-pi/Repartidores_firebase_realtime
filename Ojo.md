@@ -22,14 +22,15 @@ tomar ese horario.
 -mostrar info del usuario junto a botton de eliminar cuenta✅
 -caja roja cuando no haya motociclistas disponibles✅
 -aumentar y disminuir la cantidad de motociclistas de la base de datos✅
+-pantalla de carga de milisegundos para evitar que se vea la redireccion y la carga de la cantidad de motociclistas✅
 
--pantalla de carga de milisegundos para evitar que se vea la redireccion y la carga de la cantidad de motociclistas
--firebase functions: eliminar un usuario luego de 30 dias - eliminar delivery dryver taking
+
 -si hay una cuenta con sesion iniciada y accedo con un link de verificacion la app se queda iniciado con la cuenta anterior
 -accessibility
 -restablecer contraseña is not working
 -styling feedback, texto celeste
 -puedo entrar a registration con el link?
+
 
 
 
@@ -45,7 +46,7 @@ tomar ese horario.
 //let [,,,,[,,zanahoria]] = ['?', '?', '?', '?', ['?', '?', '?']]; lo mismo que lo pasado
 //const emotionalVeggies = [...emotion, ...veggies]; combinar arreglos
 //array.concat(arr1, arr2,..,..,..,arrN); cmbinar varios arreglos
-//join(,): une los elementos de un arreglo, regresa una cadena 
+//join(): une los elementos de un arreglo, regresa una cadena 
 //fill(): cambia lo elementos que yo selecciono
 //includes(): false o true , si encuentra una coincidencia en le arreglo
 //indexOf(): indice de un elemento

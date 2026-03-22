@@ -31,7 +31,6 @@ return (
                 take that schedule. Values must be updated in real time.
             </p>
             <a className={styleslandingRoute.linkGitHub} 
-                img src="/assets/github.png" alt="github icon"
                 href="https://github.com/jean-pi/Repartidores_firebase_realtime" target="_blank" rel="noopener noreferrer">
                 ⇱ View on GitHub
             </a>

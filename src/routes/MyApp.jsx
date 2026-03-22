@@ -24,47 +24,60 @@ export default function MyApp(){
     const [repartidores, setRepartidores] = useState(["0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0",]);
     const [repartidoresOcupados, setRepartidoresOcupados] = useState([[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],]);
     
-
+    
 
     useEffect( () => {
 
-     // 1. Iniciamos la escucha de Firebase
+        
+    
     const unsubscribe = onSnapshot(doc(dbFirestore, "repartidoresCollection", "IDrepartidoresCollection"), (doc) => {
         
             const data = doc.data();
             setRepartidores(data.repartidores);
             setRepartidoresOcupados([
-                data.repartidor900,
-                data.repartidor930,
-                data.repartidor1000,
-                data.repartidor1030,
-                data.repartidor1100,
-                data.repartidor1130,
-                data.repartidor1200,
-                data.repartidor1230,
-                data.repartidor1300,
-                data.repartidor1330,
-                data.repartidor1400,
-                data.repartidor1430,
-                data.repartidor1500,
-                data.repartidor1530,
-                data.repartidor1600,
-                data.repartidor1630,
-                data.repartidor1700,
+                data.repartidor0,
+                data.repartidor1,
+                data.repartidor2,
+                data.repartidor3,
+                data.repartidor4,
+                data.repartidor5,
+                data.repartidor6,
+                data.repartidor7,
+                data.repartidor8,
+                data.repartidor9,
+                data.repartidor10,
+                data.repartidor11,
+                data.repartidor12,
+                data.repartidor13,
+                data.repartidor14,
+                data.repartidor15,
+                data.repartidor16,
             ])
-            // 2. Solo cuando los datos llegan, quitamos el loading
-            // Podemos añadir un pequeño delay de 500ms para que no sea un salto brusco
+
             setTimeout(() => {
                 setInitLoading(false);
+
+
             }, 300);
-    });
-            console.log(repartidores)
-            console.log(repartidoresOcupados)
+
+    },(error) => {
+        if (error.code === 'permission-denied') {
+            console.error("Error al conectar con Firebase:", error);
+            localStorage.removeItem('user');
+            window.location.href = '/login?error=expired';
+    }
+    }
+    );
+       
+    
     return () => unsubscribe(); // Limpieza fundamental
+
+
 
     }, []); 
 
-
+                console.log(repartidoresOcupados);
+                console.log(repartidores);
 
     
 
@@ -99,7 +112,6 @@ export default function MyApp(){
                         take that schedule. Values must be updated in real time.
                     </p>
                     <a className={stylesMyApp.linkGitHub} 
-                        img src="/assets/github.png" alt="github icon"
                         href="https://github.com/jean-pi/Repartidores_firebase_realtime" target="_blank" rel="noopener noreferrer">
                         ⇱ View on GitHub
                     </a>
@@ -107,9 +119,9 @@ export default function MyApp(){
             
 
                 <div className={stylesMyApp.repartidorBoxContenedor}>
-                    <RepartidorBox time="9:00"  repartidoresSpecific={repartidores[0]}  repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[0]} arrayIndiceInDb={0} />
-                    <RepartidorBox time="9:30"  repartidoresSpecific={repartidores[1]}  repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[1]} arrayIndiceInDb={1} />
-                    <RepartidorBox time="10:00" repartidoresSpecific={repartidores[2]}  repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[2]} arrayIndiceInDb={2} />
+                    {/* <RepartidorBox time="9:00"  repartidoresSpecific={repartidores[0]}  repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[0]} arrayIndiceInDb={0} />
+                    <RepartidorBox time="9:30"  repartidoresSpecific={repartidores[1]}  repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[1]} arrayIndiceInDb={1} /> */}
+                    {/* <RepartidorBox time="10:00" repartidoresSpecific={repartidores[2]}  repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[2]} arrayIndiceInDb={2} />
                     <RepartidorBox time="10:30" repartidoresSpecific={repartidores[3]}  repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[3]} arrayIndiceInDb={3} />
                     <RepartidorBox time="11:00" repartidoresSpecific={repartidores[4]}  repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[4]} arrayIndiceInDb={4} />
                     <RepartidorBox time="11:30" repartidoresSpecific={repartidores[5]}  repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[5]} arrayIndiceInDb={5} />
@@ -121,7 +133,7 @@ export default function MyApp(){
                     <RepartidorBox time="14:30" repartidoresSpecific={repartidores[11]} repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[11]} arrayIndiceInDb={11}  />
                     <RepartidorBox time="15:00" repartidoresSpecific={repartidores[12]} repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[12]} arrayIndiceInDb={12}  />
                     <RepartidorBox time="15:30" repartidoresSpecific={repartidores[13]} repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[13]} arrayIndiceInDb={13}  />
-                    {/* <RepartidorBox time="16:00" repartidoresSpecific={repartidores[14]} repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[14]} arrayIndiceInDb={14}  />
+                    <RepartidorBox time="16:00" repartidoresSpecific={repartidores[14]} repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[14]} arrayIndiceInDb={14}  />
                     <RepartidorBox time="16:30" repartidoresSpecific={repartidores[15]} repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[15]} arrayIndiceInDb={15}  />
                     <RepartidorBox time="17:00" repartidoresSpecific={repartidores[16]} repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[16]} arrayIndiceInDb={16}  /> */}
                 </div>
