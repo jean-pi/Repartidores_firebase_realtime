@@ -97,8 +97,6 @@ export default function RepartidorBox({time, repartidoresSpecific, repartidoresT
             <div className={stylesRepartidorBox.deliveryDriver_count}>{repartidoresSpecific}</div>
         </div>
 
-        {/* <span className={stylesRepartidorBox.repartidorUserSpan}>Users:</span> */}
-
         <div className={stylesRepartidorBox.repartidorUserContainer}>
             <div className={stylesRepartidorBox.repartidorbox_users}>{`${repartidoresTomados[0]}`} </div>
             <div className={stylesRepartidorBox.repartidorbox_users}>{`${repartidoresTomados[1]}`} </div>

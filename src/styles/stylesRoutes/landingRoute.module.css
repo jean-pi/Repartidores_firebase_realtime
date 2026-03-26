@@ -28,7 +28,6 @@
 .containerDescriptionProyect{
     grid-column-start: 1;
     grid-column-end: 2;
-    border-radius: 24px;
     height: 100%;
     padding: 4rem;
     display: flex;
@@ -56,13 +55,17 @@
  
 .descriptionProyect{
     font-family: Helvetica, sans-serif;
-    color: rgba(32, 32, 32, 0.897);
+    color: rgba(0, 0, 0, 0.897);
     text-align: justify;
     letter-spacing: 0.05rem;
     font-size: 0.8rem;
     font-weight:lighter;
-    padding-top: 3rem;
+    margin-top: 3rem;
+    border: 2px solid rgba(255, 255, 255, 0);
+    cursor:default;
+    padding: .2rem;
 }
+
 
 @media (max-width:  23.125em){ 
     /* 370px */
@@ -76,13 +79,12 @@
     margin-top: 1.5rem;
     font-family: Helvetica, sans-serif;
     font-size: 0.8rem;
-    color: rgba(32, 32, 32, 0.851);
+    color: rgba(0, 0, 0, 0.851);
     border: 2px solid rgba(255, 255, 255, 0);
+    width: fit-content;
+    padding: .1rem;
 }
-.linkGitHub:focus{
-    border: 2px solid rgba(11, 168, 252, 0.893);
-}
- 
+
 
 
 
@@ -120,6 +122,8 @@
     letter-spacing: 1px;
     cursor: pointer;
 }
+
+ 
 
 
 

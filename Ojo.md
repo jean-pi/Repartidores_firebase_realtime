@@ -25,11 +25,9 @@ tomar ese horario.
 -pantalla de carga de milisegundos para evitar que se vea la redireccion y la carga de la cantidad de motociclistas✅
 
 
--si hay una cuenta con sesion iniciada y accedo con un link de verificacion la app se queda iniciado con la cuenta anterior
--accessibility
 -restablecer contraseña is not working
--styling feedback, texto celeste
--puedo entrar a registration con el link?
+-button delivery driver
+-button delete account
 
 
 

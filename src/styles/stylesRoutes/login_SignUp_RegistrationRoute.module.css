@@ -14,9 +14,7 @@
     text-decoration: none;
     border: 2px solid rgba(27, 175, 255, 0);
 }
-.linkBack:focus{
-    border: 2px solid rgba(11, 168, 252, 0.893);
-}
+
 
 
 .divBack{

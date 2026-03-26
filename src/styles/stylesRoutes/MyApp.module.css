@@ -98,10 +98,9 @@
     font-size: 0.8rem;
     color: rgb(32, 32, 32);
     border: 2px solid rgba(255, 255, 255, 0);
+    width:fit-content;
 }
-.linkGitHub:focus{
-    border: 2px solid rgba(11, 168, 252, 0.893);
-}
+
  
 
 /* 

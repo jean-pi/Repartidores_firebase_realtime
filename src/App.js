@@ -55,7 +55,10 @@ function App() {
           <Route element={<AuthGuard/>}>
             <Route path = {restrictedRoutes.APP_RESTRICTED} element = {<React.StrictMode> <MyApp/> </React.StrictMode>}/>
           </Route>
-          <Route path = {restrictedRoutes.REGISTARION_RESTRICTED} element = {<React.StrictMode><RegistrationView/></React.StrictMode>}/>
+          
+          <Route element={<AuthGuard/>}>
+            <Route path = {restrictedRoutes.REGISTARION_RESTRICTED} element = {<React.StrictMode><RegistrationView/></React.StrictMode>}/>
+          </Route>
 
           <Route path={publicRoutes.RECOVERPASSWORD_PUBLIC} element={<React.StrictMode> <RecoverRouter/> </React.StrictMode>}></Route> 
           <Route path = "*" element = {<h1>Error 404?</h1>}/> 
