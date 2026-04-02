@@ -128,7 +128,7 @@
 
 
 .login{
-    --color: #f2f2f27d;
+    --color: #efefef7d;
   --radius: 8%;
   --elevation: 1px;
   --bevel: 1px;
@@ -169,7 +169,7 @@
 }
 
 .login:hover{
-    background-color: rgba(243, 243, 243, 0.088);
+    background-color: #f5f5f5b2;
 }
 .login:focus{
     border: 1.5px solid rgba(104, 104, 104, 0.088);

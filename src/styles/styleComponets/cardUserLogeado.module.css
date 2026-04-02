@@ -70,12 +70,12 @@
 
 
 
-  --color: #ffffff;
+  --color: #f2f2f2;
   --radius: 8%;
-  --elevation: 1px;
+  --elevation: 3px;
   --bevel: 1px;
   --angle: 267deg;
-  --intensity: 40;
+  --intensity: 60;
   --diffusion: 30;
 
   /*======= Computed Variables =======*/

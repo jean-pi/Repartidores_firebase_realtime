@@ -99,9 +99,9 @@ export default function MyApp(){
                             motorcyclists, the box should appear red and should not let me
                             take that schedule. Values must be updated in real time.
                         </p>
-                        <a className={stylesMyApp.linkGitHub} 
-                            href="https://github.com/jean-pi/Repartidores_firebase_realtime" target="_blank" rel="noopener noreferrer">
-                            ⇱ View on GitHub
+                        <a className={stylesMyApp.deleteAccount} 
+                            href="#" target="_blank" rel="noopener noreferrer">
+                            ↩ Delete account
                         </a>
                     </div>
                 
@@ -121,9 +121,9 @@ export default function MyApp(){
                         <RepartidorBox time="14:30" repartidoresSpecific={repartidores[11]} repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[11]} arrayIndiceInDb={11}  />
                         <RepartidorBox time="15:00" repartidoresSpecific={repartidores[12]} repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[12]} arrayIndiceInDb={12}  />
                         <RepartidorBox time="15:30" repartidoresSpecific={repartidores[13]} repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[13]} arrayIndiceInDb={13}  />
-                        <RepartidorBox time="16:00" repartidoresSpecific={repartidores[14]} repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[14]} arrayIndiceInDb={14}  />
+                        {/* <RepartidorBox time="16:00" repartidoresSpecific={repartidores[14]} repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[14]} arrayIndiceInDb={14}  />
                         <RepartidorBox time="16:30" repartidoresSpecific={repartidores[15]} repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[15]} arrayIndiceInDb={15}  />
-                        <RepartidorBox time="17:00" repartidoresSpecific={repartidores[16]} repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[16]} arrayIndiceInDb={16}  />
+                        <RepartidorBox time="17:00" repartidoresSpecific={repartidores[16]} repartidoresTotales={repartidores} repartidoresTomados={repartidoresOcupados[16]} arrayIndiceInDb={16}  /> */}
                     </div>
                 </main>
             </div>

@@ -55,7 +55,7 @@
     letter-spacing: 1px;
     cursor: pointer;
 
-  --color: #f2f2f27d;
+  --color: #efefef7d;
   --radius: 8%;
   --elevation: 1px;
   --bevel: 1px;
@@ -93,7 +93,7 @@
 }
 
 .buttonSubmit1:hover{
-    background-color: #f2f2f241;
+    background-color: #f5f5f5b2;
 }
 .buttonSubmit1:active{
     /* background-color: rgba(122, 59, 59, 0.108); */
@@ -119,8 +119,8 @@
   --elevation: 1px;
   --bevel: 1px;
   --angle: 267deg;
-  --intensity: 12;
-  --diffusion: 25;
+  --intensity: 11;
+  --diffusion: 11;
 
   /*======= Computed Variables =======*/
   --sin: calc(sin(var(--angle)));
